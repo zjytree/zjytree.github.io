@@ -16,19 +16,19 @@
   <meta name="description" content="">
   <meta name="author" content="YS">
   <meta name="keywords" content="">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习 简单的shell命令命令提示符解释12[root@localhost ~]#         #&#x2F;root[jinxf@localhost ~]$        #&#x2F;home&#x2F;jinxf 用户名@主机名  当前目录   #系统权限   $普通权限 命令格式命令  选项  参数 (三者之间要有空格">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2021/11/06/hello-world/index.html">
+<meta property="og:title" content="Linux 指令">
+<meta property="og:url" content="http://example.com/2021/11/11/Linux%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Poplar的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习 简单的shell命令命令提示符解释12[root@localhost ~]#         #&#x2F;root[jinxf@localhost ~]$        #&#x2F;home&#x2F;jinxf 用户名@主机名  当前目录   #系统权限   $普通权限 命令格式命令  选项  参数 (三者之间要有空格">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-06T06:35:36.734Z">
-<meta property="article:modified_time" content="2021-11-06T06:35:36.735Z">
+<meta property="article:published_time" content="2021-11-11T04:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-11T17:25:31.089Z">
 <meta property="article:author" content="YS">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Hello World - Poplar的博客</title>
+  <title>Linux 指令 - Poplar的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="Linux 指令">
               
             </span>
 
@@ -184,8 +184,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-06 14:35" pubdate>
-        2021年11月6日 下午
+      <time datetime="2021-11-11 12:00" pubdate>
+        2021年11月11日 中午
       </time>
     </span>
   
@@ -195,7 +195,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      367 字
+      1.5k 字
     </span>
   
 
@@ -204,7 +204,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      5 分钟
     </span>
   
 
@@ -233,22 +233,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Linux 指令</h1>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+              <p>本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习</p>
+<h2 id="简单的shell命令"><a href="#简单的shell命令" class="headerlink" title="简单的shell命令"></a>简单的shell命令</h2><h3 id="命令提示符解释"><a href="#命令提示符解释" class="headerlink" title="命令提示符解释"></a>命令提示符解释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment">#         #/root</span><br>[jinxf@localhost ~]$        <span class="hljs-comment">#/home/jinxf</span><br></code></pre></td></tr></table></figure>
+<p>用户名@主机名  当前目录   #系统权限   $普通权限</p>
+<h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><p>命令  选项  参数 (三者之间要有空格，区分大小写)<br>command  [-options]  [args]<br>[args]:参数（多个参数之间用空格分隔）<br>案例演示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># ls -a</span><br>.   a    anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .tcshrc   x<br>..  abc  .bash_history    .bash_profile  .cshrc   install.log.syslog  .viminfo  xyz<br>[root@node1 ~]<span class="hljs-comment"># ls -a -l</span><br>total 72<br>dr-xr-x---.  6 root root 4096 Nov 27 12:37 .<br>dr-xr-xr-x. 22 root root 4096 Nov 27 09:22 ..<br>drwxr-xr-x   3 root root 4096 Nov 27 10:17 a<br>drwxr-xr-x   8 root root 4096 Nov 27 10:53 abc<br>-rw-------.  1 root root  900 Nov 27 03:47 anaconda-ks.cfg<br>-rw-------.  1 root root  828 Nov 27 09:48 .bash_history<br>-rw-r--r--.  1 root root   18 May 20  2009 .bash_logout<br>-rw-r--r--.  1 root root  176 May 20  2009 .bash_profile<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="获取命令帮助"><a href="#获取命令帮助" class="headerlink" title="获取命令帮助"></a>获取命令帮助</h3><p>1、使用help查看内建命令的帮助(enable查看内建命令)<br>2、info 命令<br>3、命令  –help<br>4、#man  命令<br>5、查手册<br>6、搜索引擎 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># ls --help</span><br>[root@node1 ~]<span class="hljs-comment"># info ls</span><br>[root@node1 ~]<span class="hljs-comment"># man ls</span><br></code></pre></td></tr></table></figure>
+<p>help只能查看内建命令，可以通过<code>enable</code>查看有哪些内建命令</p>
+<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><p>当前虚拟机中不能直接使用man，默认是没有安装的，不识别man命令,使用下面命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install man man-pages -y<br></code></pre></td></tr></table></figure>
+<p>q命令退出查看<br>看到的全是英文，是不是很酸爽，慢慢多看看就好了。如果你英语烂到完全看不懂，那我再教你一招，汉化man提示信息。<br>要想汉化man提示信息，系统中需要安装man-pages-zh-CN软件包。默认情况下，系统自带的yum源不包含man-pages-zh-CN,使用下面命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum  install  man-pages-zh-CN  -y<br></code></pre></td></tr></table></figure>
+<p>安装之后需要配置系统语言环境，在/etc/sysconfig/i18n下面修改为中文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># echo $LANG</span><br>en_US.UTF-8<br>[root@node1 ~]<span class="hljs-comment"># vim /etc/sysconfig/i18n</span><br><br><span class="hljs-comment">#LANG=&quot;en_US.UTF-8&quot;</span><br>LANG=<span class="hljs-string">&quot;zh_CN.UTF-8&quot;</span><br>SYSFONT=<span class="hljs-string">&quot;latarcyrheb-sun16&quot;</span><br></code></pre></td></tr></table></figure>
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>echo  -n表示不要另起新行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># echo &quot;hello world&quot;</span><br>hello world<br>[root@node1 ~]<span class="hljs-comment"># echo -n &quot;hello world&quot;</span><br>hello world[root@node1 ~]<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -268,6 +273,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/11/12/hello-world/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
