@@ -1,11 +1,21 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/favicon.png">
+  <link rel="icon" href="/project/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  
-  <title>Linux 指令2 | Poplar的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="YS">
+  <meta name="keywords" content="">
   <meta name="description" content="Linux指令 cut sort wc &#96;&#96;&#96;shellwc sort.txtwc -l sort.txtwc -w sort.txtcat sort.txt | wc -lps aux | grep sshd | wc -lwc -c sort.txtwc -m sort.txt123456789101112131415161718192021224. ### sed   1. &#96;&#96;&#96;shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 指令2">
@@ -16,90 +26,221 @@
 <meta property="article:published_time" content="2021-11-12T04:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-11T17:25:30.273Z">
 <meta property="article:author" content="YS">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
   
-    <link rel="alternate" href="/project/atom.xml" title="Poplar的博客" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/project/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>Linux 指令2 - Poplar的博客</title>
 
-  
-  
-<link rel="stylesheet" href="/project/css/style.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/project/lib/hint/hint.min.css" />
 
   
     
-<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
 
   
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/project/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zjytree.github.io","root":"/project/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/project/local-search.xml"};
+  </script>
+  <script  src="/project/js/utils.js" ></script>
+  <script  src="/project/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/project/" id="logo">Poplar的博客</a>
-      </h1>
-      
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/project/">
+      <strong>Poplar</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/project/">Home</a>
-        
-          <a class="main-nav-link" href="/project/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zjytree.github.io/project"></form>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/project/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux 指令2">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-12 12:00" pubdate>
+        2021年11月12日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-      <div class="outer">
-        <section id="main"><article id="post-Linux指令2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2021/11/12/Linux%E6%8C%87%E4%BB%A42/" class="article-date">
-  <time class="dt-published" datetime="2021-11-12T04:00:00.000Z" itemprop="datePublished">2021-11-12</time>
-</a>
+  <main>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Linux 指令2
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Linux指令"><a href="#Linux指令" class="headerlink" title="Linux指令"></a>Linux指令</h1><ol>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux 指令2</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Linux指令"><a href="#Linux指令" class="headerlink" title="Linux指令"></a>Linux指令</h1><ol>
 <li><h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3></li>
 <li><h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3></li>
 <li><h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><ol>
-<li>```shell<br>wc sort.txt<br>wc -l sort.txt<br>wc -w sort.txt<br>cat sort.txt | wc -l<br>ps aux | grep sshd | wc -l<br>wc -c sort.txt<br>wc -m sort.txt<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. ### sed</span><br><span class="line"></span><br><span class="line">   1. ```shell</span><br><span class="line">      #追加第一行下面，源文件没有修改，通过-i修改源文件</span><br><span class="line">      sed &quot;1a\hello world&quot; sed.txt</span><br><span class="line">      sed -i &quot;1a\hello world&quot; sed.txt</span><br><span class="line">      #dG删除光标以下的数据</span><br><span class="line">      #删除第二行数据</span><br><span class="line">      sed -i &quot;2d&quot; sed.txt</span><br><span class="line">      sed -i &quot;d&quot; sed.txt</span><br><span class="line">      #复制带有数字的数据,并只显示带有数字的数据</span><br><span class="line">      sed -i -n &quot;/[0-9]/p&quot; sed.txt</span><br><span class="line">      #替换s,忽略大小写i</span><br><span class="line">      sed -i &quot;s/vim/Vi/i&quot; sed.txt</span><br><span class="line">      sed &quot;s/[0-6]/5/&quot; inittab</span><br><span class="line">      #将“id:3:initdefault:”里面的数据替换成5</span><br><span class="line">      sed -i &quot;s/\(id:\)[0-6]\(:initdefault:\)/\15\2/&quot; inittab</span><br><span class="line">      sed -i -r &quot;s/(id:)[0-6](:initdefault:)/\15\2/&quot; inittab</span><br><span class="line">      #将/etc/profile文件里有PATH的哪一行写&#x27;w&#x27;到path.log里面</span><br><span class="line">      sed -n &quot;/PATH/w path.log&quot; /etc/profile</span><br><span class="line">      </span><br></pre></td></tr></table></figure></li>
+<li>```shell<br>wc sort.txt<br>wc -l sort.txt<br>wc -w sort.txt<br>cat sort.txt | wc -l<br>ps aux | grep sshd | wc -l<br>wc -c sort.txt<br>wc -m sort.txt<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs clean"><br><span class="hljs-number">4.</span> ### sed<br><br>   <span class="hljs-number">1.</span> ```shell<br>      #追加第一行下面，源文件没有修改，通过-i修改源文件<br>      sed <span class="hljs-string">&quot;1a\hello world&quot;</span> sed.txt<br>      sed -i <span class="hljs-string">&quot;1a\hello world&quot;</span> sed.txt<br>      #dG删除光标以下的数据<br>      #删除第二行数据<br>      sed -i <span class="hljs-string">&quot;2d&quot;</span> sed.txt<br>      sed -i <span class="hljs-string">&quot;d&quot;</span> sed.txt<br>      #复制带有数字的数据,并只显示带有数字的数据<br>      sed -i -n <span class="hljs-string">&quot;/[0-9]/p&quot;</span> sed.txt<br>      #替换s,忽略大小写i<br>      sed -i <span class="hljs-string">&quot;s/vim/Vi/i&quot;</span> sed.txt<br>      sed <span class="hljs-string">&quot;s/[0-6]/5/&quot;</span> inittab<br>      #将“id:<span class="hljs-number">3</span>:initdefault:”里面的数据替换成<span class="hljs-number">5</span><br>      sed -i <span class="hljs-string">&quot;s/\(id:\)[0-6]\(:initdefault:\)/\15\2/&quot;</span> inittab<br>      sed -i -r <span class="hljs-string">&quot;s/(id:)[0-6](:initdefault:)/\15\2/&quot;</span> inittab<br>      #将/etc/profile文件里有PATH的哪一行写<span class="hljs-string">&#x27;w&#x27;</span>到path.log里面<br>      sed -n <span class="hljs-string">&quot;/PATH/w path.log&quot;</span> /etc/profile<br>      <br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 <li><h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><ol>
@@ -121,7 +262,7 @@
 <li>   if、while、do/while、for、break、continue</li>
 </ul>
 <p>数组更像map</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. ```shell</span><br><span class="line">   awk -F &quot;:&quot; &#x27;&#123;print $1&#125;&#x27; passwd</span><br><span class="line">   awk -F &#x27;:&#x27; &#x27;&#123;pringt $1 &quot;,&quot; $7&#125;&#x27; passwd</span><br><span class="line">   awk -F &#x27;:&#x27; &#x27;BEGIN&#123;print &quot;name,shell&quot;&#125; &#123;print $1&quot;,&quot; $7&#125; END&#123;print &quot;shell end&quot;&#125;&#x27; passwd</span><br><span class="line">   #显示所有数据,列出行和列</span><br><span class="line">   awk -F &#x27;:&#x27; &#x27;&#123;print NR&quot;-&quot;NF&quot;-&quot;$0&#125;&#x27; passwd</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs stata"><br>2. ```<span class="hljs-keyword">shell</span><br>   awk -F <span class="hljs-string">&quot;:&quot;</span> &#x27;&#123;<span class="hljs-keyword">print</span> <span class="hljs-variable">$1&#125;</span>&#x27; passwd<br>   awk -F &#x27;:&#x27; &#x27;&#123;pringt <span class="hljs-variable">$1</span> <span class="hljs-string">&quot;,&quot;</span> <span class="hljs-variable">$7&#125;</span>&#x27; passwd<br>   awk -F &#x27;:&#x27; &#x27;BEGIN&#123;<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;name,shell&quot;</span>&#125; &#123;<span class="hljs-keyword">print</span> <span class="hljs-variable">$1</span><span class="hljs-string">&quot;,&quot;</span> <span class="hljs-variable">$7&#125;</span> END&#123;<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;shell end&quot;</span>&#125;&#x27; passwd<br>   #显示所有数据,列出行和列<br>   awk -F &#x27;:&#x27; &#x27;&#123;<span class="hljs-keyword">print</span> NR<span class="hljs-string">&quot;-&quot;</span>NF<span class="hljs-string">&quot;-&quot;</span><span class="hljs-variable">$0&#125;</span>&#x27; passwd<br></code></pre></td></tr></table></figure></li>
 <li><p>```powershell<br>•统计报表：合计每人1月总消费，0：manager，1：worker<br>Tom          0   2012-12-11      car     3000<br>John     1   2013-01-13      bike    1000<br>vivi     1   2013-01-18      car     2800<br>Tom          0   2013-01-20      car     2500<br>John     1   2013-01-28      bike    3500</p>
 <p>#解答<br>awk ‘{<br>  split($3,data_date,”-“)<br>  if(data_date[2] == “01”){</p>
 <pre><code>role_money[$1] += $5
@@ -132,145 +273,210 @@ if($2 == &quot;0&quot;)&#123;
 </code></pre>
 <p>  }<br>  }<br>  END{for(name in role_money){print name”\t”role_position[name]”\t”role_goods[name]”\t”role_money[name]}}’ awk.txt</p>
 <p>结果：<br>vivi    worker    car    2800<br>Tom        manager    car    2500<br>John    worker    bike 4500</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. ```shell</span><br><span class="line">   样例</span><br><span class="line">   cp `ls aaa*.zip bbb*.zip ccc*.zip abc20190823*.zip GDXX-20190822*.zip` /root/zipfile/</span><br><span class="line">   cd zipfile</span><br><span class="line">   unzip &#x27;*.zip&#x27;</span><br><span class="line">   file *.csv | cut -d &quot; &quot; -f 1,2 &gt; a.txt</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><br>4. ```shell<br>   样例<br>   cp `<span class="hljs-keyword">ls</span> aaa*<span class="hljs-string">.zip</span> bbb*<span class="hljs-string">.zip</span> ccc*<span class="hljs-string">.zip</span> abc20190823*<span class="hljs-string">.zip</span> GDXX-20190822*<span class="hljs-string">.zip</span>` <span class="hljs-string">/root/zipfile/</span><br>   <span class="hljs-keyword">cd</span> zipfile<br>   unzip &#x27;*<span class="hljs-string">.zip</span>&#x27;<br>   file *<span class="hljs-string">.csv</span> | cut -d <span class="hljs-string">&quot; &quot;</span> -f 1,2 &gt; a.txt<br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
-<li><h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">定义函数</span><br><span class="line">myshellname () &#123;</span><br><span class="line">   command1</span><br><span class="line">command2</span><br><span class="line">   command3</span><br><span class="line">   ……</span><br><span class="line">&#125;</span><br><span class="line">调用：</span><br><span class="line">myshellname</span><br></pre></td></tr></table></figure>
+<li><h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs powershell">定义函数<br>myshellname () &#123;<br>   command1<br>command2<br>   command3<br>   ……<br>&#125;<br>调用：<br>myshellname<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">总结：</span><br><span class="line">	bash是一个程序，shell是一个bash进程</span><br><span class="line">	bash是一个解释器，启动器</span><br><span class="line">	解释执行用户的输入指令，可以通过shell启动其他的进程</span><br><span class="line">	</span><br><span class="line">	将要执行的命令放到一个文件中，</span><br><span class="line">	在文件的开头：</span><br><span class="line">	<span class="comment">#!/bin/bash</span></span><br><span class="line">	<span class="comment">#!/usr/bin/python</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs powershell">总结：<br>	bash是一个程序，shell是一个bash进程<br>	bash是一个解释器，启动器<br>	解释执行用户的输入指令，可以通过shell启动其他的进程<br>	<br>	将要执行的命令放到一个文件中，<br>	在文件的开头：<br>	<span class="hljs-comment">#!/bin/bash</span><br>	<span class="hljs-comment">#!/usr/bin/python</span><br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	程序自身都有I/O</span><br><span class="line">	0：标准输入</span><br><span class="line">	1：标准输出</span><br><span class="line">	2：错误输出</span><br><span class="line">ls / /hello 1&gt; log.out</span><br><span class="line">ls / /hello 1&gt; log.out 2&gt; log.err</span><br><span class="line">输出重定向： 重定向从左到右绑定</span><br><span class="line">ls  /  /hello   2&gt;&amp;1  1&gt; mylog.log</span><br><span class="line">从左向右绑定，错误输出绑定到标准输出，此时标准输出是输出到控制台，然后才是标准输出重定向到文件。两个重定向的绑定没有关系。</span><br><span class="line"><span class="meta">#</span><span class="bash">注意&amp;1符号的替换，直接将输出绑定到资源，而不是绑定到文件描述符</span></span><br><span class="line">ls  /  /hello   1&gt; mylog1.log  2&gt;&amp;1</span><br><span class="line">先让标准输出重定向到文件，然后将错误输出绑定到标准输出，也就是左边绑定的文件。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">	程序自身都有I/O<br>	0：标准输入<br>	1：标准输出<br>	2：错误输出<br>ls / /hello 1&gt; log.out<br>ls / /hello 1&gt; log.out 2&gt; log.err<br>输出重定向： 重定向从左到右绑定<br>ls  /  /hello   2&gt;&amp;1  1&gt; mylog.log<br>从左向右绑定，错误输出绑定到标准输出，此时标准输出是输出到控制台，然后才是标准输出重定向到文件。两个重定向的绑定没有关系。<br><span class="hljs-meta">#</span><span class="bash">注意&amp;1符号的替换，直接将输出绑定到资源，而不是绑定到文件描述符</span><br>ls  /  /hello   1&gt; mylog1.log  2&gt;&amp;1<br>先让标准输出重定向到文件，然后将错误输出绑定到标准输出，也就是左边绑定的文件。<br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@node0 sh]# fa()&#123;</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">local</span> a=100</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$a</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> &#125;</span></span><br><span class="line">[root@node0 sh]# fa</span><br><span class="line">100</span><br><span class="line">[root@node0 sh]# fb()&#123;</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$1</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$3</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$&#123;10&#125;</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> &#125;</span></span><br><span class="line">[root@node0 sh]# fb 1 2 3 4 5 6 7 8 9 10 11</span><br><span class="line">1</span><br><span class="line">3</span><br><span class="line">10</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="variable">$&#123;10&#125;</span>除了个位，十位或百位等需要加个括号不然会出错</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node0 sh]# fa()&#123;<br><span class="hljs-meta">&gt;</span><span class="bash"> <span class="hljs-built_in">local</span> a=100</span><br><span class="hljs-meta">&gt;</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$a</span></span><br><span class="hljs-meta">&gt;</span><span class="bash"> &#125;</span><br>[root@node0 sh]# fa<br>100<br>[root@node0 sh]# fb()&#123;<br><span class="hljs-meta">&gt;</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$1</span></span><br><span class="hljs-meta">&gt;</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$3</span></span><br><span class="hljs-meta">&gt;</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;10&#125;</span></span><br><span class="hljs-meta">&gt;</span><span class="bash"> &#125;</span><br>[root@node0 sh]# fb 1 2 3 4 5 6 7 8 9 10 11<br>1<br>3<br>10<br><span class="hljs-meta">#</span><span class="bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$&#123;10&#125;</span>除了个位，十位或百位等需要加个括号不然会出错</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><p><strong>猜数字游戏</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">result=38</span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;input a number [1,100]:&quot;</span> num</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$num</span> -gt <span class="variable">$result</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;猜大了！&quot;</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$num</span> -eq <span class="variable">$result</span> ];<span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;恭喜你，猜对了！&quot;</span></span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;猜小了！&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br>result=38<br><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span><br><span class="hljs-keyword">do</span><br><span class="hljs-built_in">read</span> -p <span class="hljs-string">&quot;input a number [1,100]:&quot;</span> num<br><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$num</span> -gt <span class="hljs-variable">$result</span> ]; <span class="hljs-keyword">then</span><br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;猜大了！&quot;</span><br><span class="hljs-keyword">elif</span> [ <span class="hljs-variable">$num</span> -eq <span class="hljs-variable">$result</span> ];<span class="hljs-keyword">then</span><br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;恭喜你，猜对了！&quot;</span><br>        <span class="hljs-built_in">break</span><br><span class="hljs-keyword">else</span><br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;猜小了！&quot;</span><br><span class="hljs-keyword">fi</span><br><span class="hljs-keyword">done</span><br><br></code></pre></td></tr></table></figure></li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zjytree.github.io/project/2021/11/12/Linux%E6%8C%87%E4%BB%A42/" data-id="ckvxyqk0f0002po5u595ubxwc" data-title="Linux 指令2" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/project/2021/11/13/MapReduce/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          MapReduce 总结
-        
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/project/2021/11/13/MapReduce/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MapReduce 总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/project/2021/11/12/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/project/2021/11/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/11/">十一月 2021</a></li></ul>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/project/2021/11/13/MapReduce/">MapReduce 总结</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/11/12/Linux%E6%8C%87%E4%BB%A42/">Linux 指令2</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/11/12/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/11/11/Linux%E6%8C%87%E4%BB%A4/">Linux 指令</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 YS<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
   </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
 </footer>
 
-    </div>
-    <nav id="mobile-nav">
+
+  <!-- SCRIPTS -->
   
-    <a href="/project/" class="mobile-nav-link">Home</a>
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/project/js/events.js" ></script>
+<script  src="/project/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/project/js/local-search.js" ></script>
+
+
+
   
-    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+    <script  src="/project/js/img-lazyload.js" ></script>
   
-</nav>
-    
-
-
-<script src="/project/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
-<script src="/project/js/script.js"></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/project/js/boot.js" ></script>
+
+
 </body>
 </html>

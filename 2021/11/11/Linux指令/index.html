@@ -1,11 +1,21 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/favicon.png">
+  <link rel="icon" href="/project/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  
-  <title>Linux 指令 | Poplar的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="YS">
+  <meta name="keywords" content="">
   <meta name="description" content="本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习 简单的shell命令命令提示符解释12[root@localhost ~]#         #&#x2F;root[jinxf@localhost ~]$        #&#x2F;home&#x2F;jinxf 用户名@主机名  当前目录   #系统权限   $普通权限 命令格式命令  选项  参数 (三者之间要有空格">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 指令">
@@ -16,249 +26,444 @@
 <meta property="article:published_time" content="2021-11-11T04:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-13T15:10:34.456Z">
 <meta property="article:author" content="YS">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
   
-    <link rel="alternate" href="/project/atom.xml" title="Poplar的博客" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/project/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>Linux 指令 - Poplar的博客</title>
 
-  
-  
-<link rel="stylesheet" href="/project/css/style.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/project/lib/hint/hint.min.css" />
 
   
     
-<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
 
   
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/project/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zjytree.github.io","root":"/project/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/project/local-search.xml"};
+  </script>
+  <script  src="/project/js/utils.js" ></script>
+  <script  src="/project/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/project/" id="logo">Poplar的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/project/">Home</a>
-        
-          <a class="main-nav-link" href="/project/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zjytree.github.io/project"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-Linux指令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2021/11/11/Linux%E6%8C%87%E4%BB%A4/" class="article-date">
-  <time class="dt-published" datetime="2021-11-11T04:00:00.000Z" itemprop="datePublished">2021-11-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Linux 指令
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习</p>
-<h2 id="简单的shell命令"><a href="#简单的shell命令" class="headerlink" title="简单的shell命令"></a>简单的shell命令</h2><h3 id="命令提示符解释"><a href="#命令提示符解释" class="headerlink" title="命令提示符解释"></a>命令提示符解释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment">#         #/root</span></span><br><span class="line">[jinxf@localhost ~]$        <span class="comment">#/home/jinxf</span></span><br></pre></td></tr></table></figure>
-<p>用户名@主机名  当前目录   #系统权限   $普通权限</p>
-<h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><p>命令  选项  参数 (三者之间要有空格，区分大小写)<br>command  [-options]  [args]<br>[args]:参数（多个参数之间用空格分隔）<br>案例演示</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># ls -a</span></span><br><span class="line">.   a    anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .tcshrc   x</span><br><span class="line">..  abc  .bash_history    .bash_profile  .cshrc   install.log.syslog  .viminfo  xyz</span><br><span class="line">[root@node1 ~]<span class="comment"># ls -a -l</span></span><br><span class="line">total 72</span><br><span class="line">dr-xr-x---.  6 root root 4096 Nov 27 12:37 .</span><br><span class="line">dr-xr-xr-x. 22 root root 4096 Nov 27 09:22 ..</span><br><span class="line">drwxr-xr-x   3 root root 4096 Nov 27 10:17 a</span><br><span class="line">drwxr-xr-x   8 root root 4096 Nov 27 10:53 abc</span><br><span class="line">-rw-------.  1 root root  900 Nov 27 03:47 anaconda-ks.cfg</span><br><span class="line">-rw-------.  1 root root  828 Nov 27 09:48 .bash_history</span><br><span class="line">-rw-r--r--.  1 root root   18 May 20  2009 .bash_logout</span><br><span class="line">-rw-r--r--.  1 root root  176 May 20  2009 .bash_profile</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="获取命令帮助"><a href="#获取命令帮助" class="headerlink" title="获取命令帮助"></a>获取命令帮助</h3><p>1、使用help查看内建命令的帮助(enable查看内建命令)<br>2、info 命令<br>3、命令  –help<br>4、#man  命令<br>5、查手册<br>6、搜索引擎 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># ls --help</span></span><br><span class="line">[root@node1 ~]<span class="comment"># info ls</span></span><br><span class="line">[root@node1 ~]<span class="comment"># man ls</span></span><br></pre></td></tr></table></figure>
-<p>help只能查看内建命令，可以通过<code>enable</code>查看有哪些内建命令</p>
-<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><p>当前虚拟机中不能直接使用man，默认是没有安装的，不识别man命令,使用下面命令安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install man man-pages -y</span><br></pre></td></tr></table></figure>
-<p>q命令退出查看<br>看到的全是英文，是不是很酸爽，慢慢多看看就好了。如果你英语烂到完全看不懂，那我再教你一招，汉化man提示信息。<br>要想汉化man提示信息，系统中需要安装man-pages-zh-CN软件包。默认情况下，系统自带的yum源不包含man-pages-zh-CN,使用下面命令安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum  install  man-pages-zh-CN  -y</span><br></pre></td></tr></table></figure>
-<p>安装之后需要配置系统语言环境，在/etc/sysconfig/i18n下面修改为中文</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># echo $LANG</span></span><br><span class="line">en_US.UTF-8</span><br><span class="line">[root@node1 ~]<span class="comment"># vim /etc/sysconfig/i18n</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#LANG=&quot;en_US.UTF-8&quot;</span></span><br><span class="line">LANG=<span class="string">&quot;zh_CN.UTF-8&quot;</span></span><br><span class="line">SYSFONT=<span class="string">&quot;latarcyrheb-sun16&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>echo  -n表示不要另起新行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># echo &quot;hello world&quot;</span></span><br><span class="line">hello world</span><br><span class="line">[root@node1 ~]<span class="comment"># echo -n &quot;hello world&quot;</span></span><br><span class="line">hello world[root@node1 ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>type打印一个字符串的类型，可能的值为：别名，内置命令，函数，关键字，可执行文件或者什么都不输出（不是前面的类型）。<br>查看cd命令和yum的类型：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># type cd</span></span><br><span class="line"><span class="built_in">cd</span> is a shell <span class="built_in">builtin</span></span><br><span class="line">[root@node1 ~]<span class="comment"># type yum</span></span><br><span class="line">yum is /usr/bin/yum</span><br></pre></td></tr></table></figure>
-<p>可以看到cd为内置命令，而yum是外部命令</p>
-<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>file命令用于查看各个文件的类型</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># file /usr/bin/yum</span></span><br><span class="line">/usr/bin/yum: a /usr/bin/python script text executable</span><br><span class="line">[root@node1 ~]<span class="comment"># file install.log</span></span><br><span class="line">install.log: ASCII text</span><br><span class="line">[root@node1 ~]<span class="comment"># file start_hdfs_ha.sh</span></span><br><span class="line">start_hdfs_ha.sh: Bourne-Again shell script text executable</span><br></pre></td></tr></table></figure>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># ls</span></span><br><span class="line">[root@node1 ~]<span class="comment"># ls -l</span></span><br><span class="line">[root@node1 ~]<span class="comment"># ls -a</span></span><br><span class="line">[root@node1 ~]<span class="comment"># ll -h</span></span><br></pre></td></tr></table></figure>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>打印当前工作目录路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># pwd</span></span><br><span class="line">/root</span><br></pre></td></tr></table></figure>
-<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>可以通过命令查看系统内进程信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看磁盘使用情况</span></span><br><span class="line">[root@node1 ~]<span class="comment"># ps -ef</span></span><br><span class="line">UID         PID   PPID  C STIME TTY          TIME CMD</span><br><span class="line">root          1      0  0 Oct30 ?        00:00:00 /sbin/init</span><br><span class="line">root          2      0  0 Oct30 ?        00:00:00 [kthreadd]</span><br><span class="line">root          3      2  0 Oct30 ?        00:00:00 [migration/0]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>进程查看命令<br>    ps(process status) :将某个时间点的程序运作情况截取下来<br>    选项和参数<br>    a :和输入终端（terminal） 关联的所有 process，通常与x一起使用，列出完整信息。<br>    x :后台进程，通常与 a 这个参数一起使用,可列出较完整信息<br>    u :有效使用者 (effective user) 相关的 process<br>    ps aux 观察系统所有的程序数据 （常用）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># ps aux</span></span><br><span class="line">USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</span><br><span class="line">root          1  0.0  0.1  19232  1492 ?        Ss   Oct30   0:00 /sbin/init</span><br><span class="line">root          2  0.0  0.0      0     0 ?        S    Oct30   0:00 [kthreadd]</span><br><span class="line">root          3  0.0  0.0      0     0 ?        S    Oct30   0:00 [migration/0]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>•以下为各选项的含义<br>    USER:该 process 属于那个使用者<br>    PID :该 process 的程序标识符。<br>    %CPU:该 process 使用掉的 CPU 资源百分比;<br>    %MEM:该 process 所占用的物理内存百分比;<br>    VSZ :该 process 使用掉的虚拟内存量 (Kbytes)<br>    RSS :该 process 占用的物理的内存量 (Kbytes)<br>    TTY :该 process 是在那个终端机上面运作,若与终端机无关则显示 ?, 另外, tty1-tty6 是本机上面的登入者程序,若为 pts/0 等等的,则表示为由网络连接进主机的程序。<br>    STAT:该进程目前的状态,状态显示与ps -l 的 S 旗标相同 (R/S/D/T/Z)<br>    START:该 process 被触发启动的时间;<br>    TIME :该 process 实际使用 CPU 运作的时间。<br>    COMMAND:该程序的实际命令为何? </p>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>用于创建目录，可以使用-p创建多层目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># mkdir a</span></span><br><span class="line">[root@node1 ~]<span class="comment"># mkdir a/b/c</span></span><br><span class="line">mkdir: 无法创建目录<span class="string">&quot;a/b/c&quot;</span>: 没有那个文件或目录</span><br><span class="line">[root@node1 ~]<span class="comment"># mkdir -p a/b/c</span></span><br></pre></td></tr></table></figure>
-<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>rm用于删除文件,添加-f选项可以不用确认强制删除<br>如果删除目录的话，需要添加-r参数表示迭代删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># mkdir -p a/b/c</span></span><br><span class="line">[root@node1 ~]<span class="comment"># rm -rf a</span></span><br></pre></td></tr></table></figure>
-<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>文件拷贝<br>cp  文件   目标目录<br>可以同时拷贝多个文件，文件名之间用空格隔开</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 ~]<span class="comment"># cp stop_hdfs_ha.sh a/b/c</span></span><br><span class="line">[root@node1 ~]<span class="comment"># cd a/b/c</span></span><br><span class="line">[root@node1 c]<span class="comment"># ll</span></span><br><span class="line">总用量 4</span><br><span class="line">-rwxr-xr-x 1 root root 324 10月 31 02:29 stop_hdfs_ha.sh</span><br></pre></td></tr></table></figure>
-
-<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>mv用于移动或重命名文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 c]<span class="comment"># mv stop_hdfs_ha.sh ABC.sh   #重命名为ABC.sh </span></span><br><span class="line">[root@node1 c]<span class="comment"># mv ABC.sh  ../				#移动文件到上一级目录下</span></span><br></pre></td></tr></table></figure>
-<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><p>用于创建硬链接或软链接<br>可以使用ll -i选项让ll打印文件的inode信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@node1 c]<span class="comment"># cp /etc/profile ./</span></span><br><span class="line">[root@node1 c]<span class="comment"># ln profile  ln1    #创建硬链接</span></span><br><span class="line">[root@node1 c]<span class="comment"># ln -s profile ln2  #创建软链接：让ln2指向profile, 给profile创建软连接，相当于windows中的快捷方式</span></span><br><span class="line">[root@node1 c]<span class="comment"># ll -i</span></span><br><span class="line">总用量 8</span><br><span class="line">784365 -rw-r--r-- 2 root root 2041 10月 31 02:33 ln1</span><br><span class="line">784366 lrwxrwxrwx 1 root root    7 10月 31 02:34 ln2 -&gt; profile</span><br><span class="line">784365 -rw-r--r-- 2 root root 2041 10月 31 02:33 profile</span><br></pre></td></tr></table></figure>
-<p>如果两个文件inode一样，表示两个文件（ln1和profile）实际上是同一个文件，硬连接。如果inode不一样，但是有ln2-&gt;profile，表示ln2是profile的软链接。<br>注意：<br>    ln1、ln2都不能提前创建，或是已经存在的文件，否则报错。<br>    软连接删除不会删除源文件<br>    硬链接删除后如果源文件没有硬链接，则文件被删除<br>如何在不使用mv的情况下移动文件？可以操作硬连接</p>
-<h2 id="文件系统命令"><a href="#文件系统命令" class="headerlink" title="文件系统命令"></a>文件系统命令</h2><h2 id="系统操作命令"><a href="#系统操作命令" class="headerlink" title="系统操作命令"></a>系统操作命令</h2><h2 id="文本操作命令"><a href="#文本操作命令" class="headerlink" title="文本操作命令"></a>文本操作命令</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zjytree.github.io/project/2021/11/11/Linux%E6%8C%87%E4%BB%A4/" data-id="ckvxyqk080000po5u1ltqf71o" data-title="Linux 指令" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/project/2021/11/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/project/">
+      <strong>Poplar</strong>
     </a>
-  
-  
-</nav>
 
-  
-</article>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-
-</section>
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2021/11/">十一月 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
         
-          <li>
-            <a href="/project/2021/11/13/MapReduce/">MapReduce 总结</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/project/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
-          <li>
-            <a href="/project/2021/11/12/Linux%E6%8C%87%E4%BB%A42/">Linux 指令2</a>
-          </li>
         
-          <li>
-            <a href="/project/2021/11/12/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/project/2021/11/11/Linux%E6%8C%87%E4%BB%A4/">Linux 指令</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
     </div>
   </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 YS<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/project/" class="mobile-nav-link">Home</a>
-  
-    <a href="/project/archives" class="mobile-nav-link">Archives</a>
-  
 </nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/project/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux 指令">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-11 12:00" pubdate>
+        2021年11月11日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux 指令</h1>
+            
+            <div class="markdown-body">
+              <p>本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习</p>
+<h2 id="简单的shell命令"><a href="#简单的shell命令" class="headerlink" title="简单的shell命令"></a>简单的shell命令</h2><h3 id="命令提示符解释"><a href="#命令提示符解释" class="headerlink" title="命令提示符解释"></a>命令提示符解释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment">#         #/root</span><br>[jinxf@localhost ~]$        <span class="hljs-comment">#/home/jinxf</span><br></code></pre></td></tr></table></figure>
+<p>用户名@主机名  当前目录   #系统权限   $普通权限</p>
+<h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><p>命令  选项  参数 (三者之间要有空格，区分大小写)<br>command  [-options]  [args]<br>[args]:参数（多个参数之间用空格分隔）<br>案例演示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># ls -a</span><br>.   a    anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .tcshrc   x<br>..  abc  .bash_history    .bash_profile  .cshrc   install.log.syslog  .viminfo  xyz<br>[root@node1 ~]<span class="hljs-comment"># ls -a -l</span><br>total 72<br>dr-xr-x---.  6 root root 4096 Nov 27 12:37 .<br>dr-xr-xr-x. 22 root root 4096 Nov 27 09:22 ..<br>drwxr-xr-x   3 root root 4096 Nov 27 10:17 a<br>drwxr-xr-x   8 root root 4096 Nov 27 10:53 abc<br>-rw-------.  1 root root  900 Nov 27 03:47 anaconda-ks.cfg<br>-rw-------.  1 root root  828 Nov 27 09:48 .bash_history<br>-rw-r--r--.  1 root root   18 May 20  2009 .bash_logout<br>-rw-r--r--.  1 root root  176 May 20  2009 .bash_profile<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="获取命令帮助"><a href="#获取命令帮助" class="headerlink" title="获取命令帮助"></a>获取命令帮助</h3><p>1、使用help查看内建命令的帮助(enable查看内建命令)<br>2、info 命令<br>3、命令  –help<br>4、#man  命令<br>5、查手册<br>6、搜索引擎 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># ls --help</span><br>[root@node1 ~]<span class="hljs-comment"># info ls</span><br>[root@node1 ~]<span class="hljs-comment"># man ls</span><br></code></pre></td></tr></table></figure>
+<p>help只能查看内建命令，可以通过<code>enable</code>查看有哪些内建命令</p>
+<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><p>当前虚拟机中不能直接使用man，默认是没有安装的，不识别man命令,使用下面命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install man man-pages -y<br></code></pre></td></tr></table></figure>
+<p>q命令退出查看<br>看到的全是英文，是不是很酸爽，慢慢多看看就好了。如果你英语烂到完全看不懂，那我再教你一招，汉化man提示信息。<br>要想汉化man提示信息，系统中需要安装man-pages-zh-CN软件包。默认情况下，系统自带的yum源不包含man-pages-zh-CN,使用下面命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum  install  man-pages-zh-CN  -y<br></code></pre></td></tr></table></figure>
+<p>安装之后需要配置系统语言环境，在/etc/sysconfig/i18n下面修改为中文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># echo $LANG</span><br>en_US.UTF-8<br>[root@node1 ~]<span class="hljs-comment"># vim /etc/sysconfig/i18n</span><br><br><span class="hljs-comment">#LANG=&quot;en_US.UTF-8&quot;</span><br>LANG=<span class="hljs-string">&quot;zh_CN.UTF-8&quot;</span><br>SYSFONT=<span class="hljs-string">&quot;latarcyrheb-sun16&quot;</span><br></code></pre></td></tr></table></figure>
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><p>echo  -n表示不要另起新行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># echo &quot;hello world&quot;</span><br>hello world<br>[root@node1 ~]<span class="hljs-comment"># echo -n &quot;hello world&quot;</span><br>hello world[root@node1 ~]<span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>type打印一个字符串的类型，可能的值为：别名，内置命令，函数，关键字，可执行文件或者什么都不输出（不是前面的类型）。<br>查看cd命令和yum的类型：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># type cd</span><br><span class="hljs-built_in">cd</span> is a shell <span class="hljs-built_in">builtin</span><br>[root@node1 ~]<span class="hljs-comment"># type yum</span><br>yum is /usr/bin/yum<br></code></pre></td></tr></table></figure>
+<p>可以看到cd为内置命令，而yum是外部命令</p>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p>file命令用于查看各个文件的类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># file /usr/bin/yum</span><br>/usr/bin/yum: a /usr/bin/python script text executable<br>[root@node1 ~]<span class="hljs-comment"># file install.log</span><br>install.log: ASCII text<br>[root@node1 ~]<span class="hljs-comment"># file start_hdfs_ha.sh</span><br>start_hdfs_ha.sh: Bourne-Again shell script text executable<br></code></pre></td></tr></table></figure>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># ls</span><br>[root@node1 ~]<span class="hljs-comment"># ls -l</span><br>[root@node1 ~]<span class="hljs-comment"># ls -a</span><br>[root@node1 ~]<span class="hljs-comment"># ll -h</span><br></code></pre></td></tr></table></figure>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>打印当前工作目录路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># pwd</span><br>/root<br></code></pre></td></tr></table></figure>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>可以通过命令查看系统内进程信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#查看磁盘使用情况</span><br>[root@node1 ~]<span class="hljs-comment"># ps -ef</span><br>UID         PID   PPID  C STIME TTY          TIME CMD<br>root          1      0  0 Oct30 ?        00:00:00 /sbin/init<br>root          2      0  0 Oct30 ?        00:00:00 [kthreadd]<br>root          3      2  0 Oct30 ?        00:00:00 [migration/0]<br>...<br></code></pre></td></tr></table></figure>
+<p>进程查看命令<br>    ps(process status) :将某个时间点的程序运作情况截取下来<br>    选项和参数<br>    a :和输入终端（terminal） 关联的所有 process，通常与x一起使用，列出完整信息。<br>    x :后台进程，通常与 a 这个参数一起使用,可列出较完整信息<br>    u :有效使用者 (effective user) 相关的 process<br>    ps aux 观察系统所有的程序数据 （常用）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># ps aux</span><br>USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND<br>root          1  0.0  0.1  19232  1492 ?        Ss   Oct30   0:00 /sbin/init<br>root          2  0.0  0.0      0     0 ?        S    Oct30   0:00 [kthreadd]<br>root          3  0.0  0.0      0     0 ?        S    Oct30   0:00 [migration/0]<br>...<br></code></pre></td></tr></table></figure>
+<p>•以下为各选项的含义<br>    USER:该 process 属于那个使用者<br>    PID :该 process 的程序标识符。<br>    %CPU:该 process 使用掉的 CPU 资源百分比;<br>    %MEM:该 process 所占用的物理内存百分比;<br>    VSZ :该 process 使用掉的虚拟内存量 (Kbytes)<br>    RSS :该 process 占用的物理的内存量 (Kbytes)<br>    TTY :该 process 是在那个终端机上面运作,若与终端机无关则显示 ?, 另外, tty1-tty6 是本机上面的登入者程序,若为 pts/0 等等的,则表示为由网络连接进主机的程序。<br>    STAT:该进程目前的状态,状态显示与ps -l 的 S 旗标相同 (R/S/D/T/Z)<br>    START:该 process 被触发启动的时间;<br>    TIME :该 process 实际使用 CPU 运作的时间。<br>    COMMAND:该程序的实际命令为何? </p>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>用于创建目录，可以使用-p创建多层目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># mkdir a</span><br>[root@node1 ~]<span class="hljs-comment"># mkdir a/b/c</span><br>mkdir: 无法创建目录<span class="hljs-string">&quot;a/b/c&quot;</span>: 没有那个文件或目录<br>[root@node1 ~]<span class="hljs-comment"># mkdir -p a/b/c</span><br></code></pre></td></tr></table></figure>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>rm用于删除文件,添加-f选项可以不用确认强制删除<br>如果删除目录的话，需要添加-r参数表示迭代删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># mkdir -p a/b/c</span><br>[root@node1 ~]<span class="hljs-comment"># rm -rf a</span><br></code></pre></td></tr></table></figure>
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>文件拷贝<br>cp  文件   目标目录<br>可以同时拷贝多个文件，文件名之间用空格隔开</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 ~]<span class="hljs-comment"># cp stop_hdfs_ha.sh a/b/c</span><br>[root@node1 ~]<span class="hljs-comment"># cd a/b/c</span><br>[root@node1 c]<span class="hljs-comment"># ll</span><br>总用量 4<br>-rwxr-xr-x 1 root root 324 10月 31 02:29 stop_hdfs_ha.sh<br></code></pre></td></tr></table></figure>
+
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>mv用于移动或重命名文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 c]<span class="hljs-comment"># mv stop_hdfs_ha.sh ABC.sh   #重命名为ABC.sh </span><br>[root@node1 c]<span class="hljs-comment"># mv ABC.sh  ../				#移动文件到上一级目录下</span><br></code></pre></td></tr></table></figure>
+<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><p>用于创建硬链接或软链接<br>可以使用ll -i选项让ll打印文件的inode信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 c]<span class="hljs-comment"># cp /etc/profile ./</span><br>[root@node1 c]<span class="hljs-comment"># ln profile  ln1    #创建硬链接</span><br>[root@node1 c]<span class="hljs-comment"># ln -s profile ln2  #创建软链接：让ln2指向profile, 给profile创建软连接，相当于windows中的快捷方式</span><br>[root@node1 c]<span class="hljs-comment"># ll -i</span><br>总用量 8<br>784365 -rw-r--r-- 2 root root 2041 10月 31 02:33 ln1<br>784366 lrwxrwxrwx 1 root root    7 10月 31 02:34 ln2 -&gt; profile<br>784365 -rw-r--r-- 2 root root 2041 10月 31 02:33 profile<br></code></pre></td></tr></table></figure>
+<p>如果两个文件inode一样，表示两个文件（ln1和profile）实际上是同一个文件，硬连接。如果inode不一样，但是有ln2-&gt;profile，表示ln2是profile的软链接。<br>注意：<br>    ln1、ln2都不能提前创建，或是已经存在的文件，否则报错。<br>    软连接删除不会删除源文件<br>    硬链接删除后如果源文件没有硬链接，则文件被删除<br>如何在不使用mv的情况下移动文件？可以操作硬连接</p>
+<h2 id="文件系统命令"><a href="#文件系统命令" class="headerlink" title="文件系统命令"></a>文件系统命令</h2><h2 id="系统操作命令"><a href="#系统操作命令" class="headerlink" title="系统操作命令"></a>系统操作命令</h2><h2 id="文本操作命令"><a href="#文本操作命令" class="headerlink" title="文本操作命令"></a>文本操作命令</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/project/2021/11/12/hello-world/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/project/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/project/js/events.js" ></script>
+<script  src="/project/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/project/js/local-search.js" ></script>
 
 
 
   
-<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/project/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
-<script src="/project/js/script.js"></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/project/js/boot.js" ></script>
+
+
 </body>
 </html>
