@@ -8,7 +8,7 @@
     <link href="/2021/11/13/MapReduce/"/>
     <url>/2021/11/13/MapReduce/</url>
     
-    <content type="html"><![CDATA[<h2 id="在文章中插入指定大小的图片。"><a href="#在文章中插入指定大小的图片。" class="headerlink" title="在文章中插入指定大小的图片。"></a>在文章中插入指定大小的图片。</h2><img class="[class names] D:\MyBlog\ysblog\source\jpgs\MR1.png [width] [height] &quot;title text&quot; &quot;alt text&quot;"><h2 id="MapReduce原语"><a href="#MapReduce原语" class="headerlink" title="MapReduce原语"></a>MapReduce原语</h2><p>1.Hadoop MapReduce框架可以让你在集群中可靠的、容错的、并行、处理TB级别的数据<br>2.’相同’key的键值对为一组调用一次reduce方法，方法内迭代这一组数据并计算<br>3.</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="在文章中插入指定大小的图片。"><a href="#在文章中插入指定大小的图片。" class="headerlink" title="在文章中插入指定大小的图片。"></a>在文章中插入指定大小的图片。</h2><img class="D:\MyBlog\ysblog\source\jpgs\MR1.png"><h2 id="MapReduce原语"><a href="#MapReduce原语" class="headerlink" title="MapReduce原语"></a>MapReduce原语</h2><p>1.Hadoop MapReduce框架可以让你在集群中可靠的、容错的、并行、处理TB级别的数据<br>2.’相同’key的键值对为一组调用一次reduce方法，方法内迭代这一组数据并计算<br>3.YARN资源管理框架</p>]]></content>
     
     
     
