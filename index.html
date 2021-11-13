@@ -202,6 +202,7 @@
             
           
           
+
         </a>
       </p>
 
@@ -237,7 +238,11 @@
           
             
           
-          MapReduce 计算流程    首先将block进行切片，每个切片对应一个map任务    切片是为了将block数量和map任务数量解耦    map读取切片数据，默认按行读取，作为键值对交给map方法，其中key为当前读取行的字节偏移量，value为当前读取行的内容    map开始计算，自定义计算逻辑    map将输出的kv首先写道环形缓冲区，在写之前计算分区号（默认按照key的has
+          MapReduce 计算流程首先将block进行切片，每个切片对应一个map任务
+切片是为了将block数量和map任务数量解耦
+map读取切片数据，默认按行读取，作为键值对交给map方法，其中key为当前读取行的字节偏移量，value为当前读取行的内容
+map开始计算，自定义计算逻辑
+map将输出的kv首先写道环形缓冲区，在写之前计算分区号（默认按照key的hash值对reducer的个数据取模
         </a>
       </p>
 
@@ -247,6 +252,43 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2021-11-13 00:00" pubdate>
               2021-11-13
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/12/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/12/hello-world/" target="_self">
+          
+          
+            
+          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-12 12:00" pubdate>
+              2021-11-12
             </time>
           </div>
         
@@ -278,43 +320,6 @@ cut
 sort
 wc
 ```shellwc sort.txtwc -l sort.txtwc -w sort.txtcat sort.txt | wc -lps aux | grep sshd | wc -lwc -c sort.txtwc -m sort.txt123456789101112131415161718192021224. ### sed   1. ```shell
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-12 12:00" pubdate>
-              2021-11-12
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/12/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/12/hello-world/" target="_self">
-          
-          
-            
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
         </a>
       </p>
 
