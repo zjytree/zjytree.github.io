@@ -24,7 +24,7 @@
 <meta property="og:description" content="本章节主要介绍一些Linux常用指令的用法，在分享给大家的同时，也能巩固一下自己对Linux指令的复习 简单的shell命令命令提示符解释12[root@localhost ~]#         #&#x2F;root[jinxf@localhost ~]$        #&#x2F;home&#x2F;jinxf 用户名@主机名  当前目录   #系统权限   $普通权限 命令格式命令  选项  参数 (三者之间要有空格">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-11T04:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-11T18:35:06.199Z">
+<meta property="article:modified_time" content="2021-11-11T18:36:17.905Z">
 <meta property="article:author" content="YS">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -279,7 +279,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 c]<span class="hljs-comment"># mv stop_hdfs_ha.sh ABC.sh   #重命名为ABC.sh </span><br>[root@node1 c]<span class="hljs-comment"># mv ABC.sh  ../				#移动文件到上一级目录下</span><br></code></pre></td></tr></table></figure>
 <h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><p>用于创建硬链接或软链接<br>可以使用ll -i选项让ll打印文件的inode信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@node1 c]<span class="hljs-comment"># cp /etc/profile ./</span><br>[root@node1 c]<span class="hljs-comment"># ln profile  ln1    #创建硬链接</span><br>[root@node1 c]<span class="hljs-comment"># ln -s profile ln2  #创建软链接：让ln2指向profile, 给profile创建软连接，相当于windows中的快捷方式</span><br>[root@node1 c]<span class="hljs-comment"># ll -i</span><br>总用量 8<br>784365 -rw-r--r-- 2 root root 2041 10月 31 02:33 ln1<br>784366 lrwxrwxrwx 1 root root    7 10月 31 02:34 ln2 -&gt; profile<br>784365 -rw-r--r-- 2 root root 2041 10月 31 02:33 profile<br></code></pre></td></tr></table></figure>
-<p>如果两个文件inode一样，表示两个文件（ln1和profile）实际上是同一个文件，硬连接。如果inode不一样，但是有ln2-&gt;profile，表示ln2是profile的软链接。<br>#####注意：<br>    ln1、ln2都不能提前创建，或是已经存在的文件，否则报错。<br>    软连接删除不会删除源文件<br>    硬链接删除后如果源文件没有硬链接，则文件被删除<br>如何在不使用mv的情况下移动文件？可以操作硬连接</p>
+<p>如果两个文件inode一样，表示两个文件（ln1和profile）实际上是同一个文件，硬连接。如果inode不一样，但是有ln2-&gt;profile，表示ln2是profile的软链接。<br>注意：<br>    ln1、ln2都不能提前创建，或是已经存在的文件，否则报错。<br>    软连接删除不会删除源文件<br>    硬链接删除后如果源文件没有硬链接，则文件被删除<br>如何在不使用mv的情况下移动文件？可以操作硬连接</p>
 <h2 id="文件系统命令"><a href="#文件系统命令" class="headerlink" title="文件系统命令"></a>文件系统命令</h2><h2 id="系统操作命令"><a href="#系统操作命令" class="headerlink" title="系统操作命令"></a>系统操作命令</h2><h2 id="文本操作命令"><a href="#文本操作命令" class="headerlink" title="文本操作命令"></a>文本操作命令</h2>
             </div>
             <hr>
